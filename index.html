@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow VOD Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>ServiceNow VOD Data</h2>
+    <form id="filterForm">
+        <label for="vodFileName">VOD File Name:</label>
+        <input type="text" id="vodFileName" name="vodFileName">
+        
+        <label for="vodNumber">VOD Number:</label>
+        <input type="text" id="vodNumber" name="vodNumber">
+        
+        <label for="vodStatus">VOD Status:</label>
+        <select id="vodStatus" name="vodStatus">
+            <option value="">--Select--</option>
+            <option value="pending">Pending</option>
+            <option value="complete">Complete</option>
+        </select>
+        
+        <button type="button" onclick="fetchData(true)">Search</button>
+    </form>
+    
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Updated On</th>
+                <th>VOD Notes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <div id="pagination">
+        <button onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+        <span id="pageInfo"></span>
+        <button onclick="nextPage()" id="nextBtn" disabled>Next</button>
+    </div>
+    
+    <script src="script.js?v3"></script>
+</body>
+</html>
