@@ -4,6 +4,7 @@ const pageSize = 10;
 
 document.addEventListener("DOMContentLoaded", () => {
     populateVodStatusDropdown();
+    fetchData();
 });
 
 function populateVodStatusDropdown() {
@@ -18,6 +19,7 @@ function populateVodStatusDropdown() {
 }
 
 async function fetchData(resetPage = false) {
+ 
     if (resetPage) {
         currentPage = 1; // Reset to the first page when a new search is triggered
     }
@@ -31,25 +33,40 @@ async function fetchData(resetPage = false) {
     if (vodNumber) query.push(`numberSTARTSWITH${encodeURIComponent(vodNumber)}`);
     if (vodStatus) query.push(`vod_status=${encodeURIComponent(vodStatus)}`);
 
-    const queryString = query.length ? `?sysparm_query=${query.join("%5E")}&sysparm_limit=${pageSize}&sysparm_offset=${(currentPage - 1) * pageSize}` : `?sysparm_limit=${pageSize}&sysparm_offset=${(currentPage - 1) * pageSize}`;
+    const queryString = query.length
+        ? `?sysparm_query=${query.join("%5E")}&sysparm_limit=${pageSize}&sysparm_offset=${(currentPage - 1) * pageSize}`
+        : `?sysparm_limit=${pageSize}&sysparm_offset=${(currentPage - 1) * pageSize}`;
 
     const url = `https://c1bwpmamap02.lib.loc.gov/eConnectNowAPI/api/now/table/x_g_lon_eess_event_video_support${queryString}`;
-    const username = "ia.emam.user";
-    const password = "ygGYz$qOul!vvO$8hcT9M#kxC]tPStTJS==5C{hP";
-    const headers = new Headers();
-    headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
-    headers.set('Accept', 'application/json');
+    
+    const useDummyData = true; // Change to `false` when ready to use the actual API
 
     try {
-        const response = await fetch(url, { method: 'GET', headers: headers });
+        let data;
+        
+        if (useDummyData) {
+            const response = await fetch('./dummyData.json'); // Load dummy JSON file
+            if (!response.ok) {
+                alert('ERR');
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            data = await response.json();
+        } else {
+            const username = "ia.emam.user";
+            const password = "ygGYz$qOul!vvO$8hcT9M#kxC]tPStTJS==5C{hP";
+            const headers = new Headers();
+            headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+            headers.set('Accept', 'application/json');
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            const response = await fetch(url, { method: 'GET', headers: headers });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            totalRecords = parseInt(response.headers.get("X-total-count")) || 0;
+            data = await response.json();
         }
 
-        totalRecords = parseInt(response.headers.get("X-total-count")) || 0;
-
-        const data = await response.json();
         populateTable(data.result);
         updatePagination();
     } catch (error) {
