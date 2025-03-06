@@ -1,0 +1,173 @@
+{
+  "systemFields": {
+    "apiURL": "https://demo.emamcloud.com/eMAMRESTAPI/api/v1/",
+    "projectPath": "D:\\templates\\PRG_DEST\\",
+    "projectVirtualPath": "https://demo.emamcloud.com/PRG_DEST",
+    "metadataSetId": 1026,
+    "assetMetadataSetId": 1027,
+    "authToken": "1JZYC2z7NiEigA==:wOJBFChFkJAaH7I2zPYbeOGA3guxBMgsHPdCXWZ8wgHRr7AfDlz7uw=="
+  },
+  "formFields": [
+    {
+      "label": "Project Number",
+      "name": "projectNumber",
+      "metadataFieldId": 1675,
+      "type": "text",
+      "required": true
+    },
+    {
+      "label": "EventYY",
+      "name": "eventyear",
+      "metadataFieldId": 1669,
+      "type": "text",
+      "required": true
+    },
+    {
+      "label": "Project Name",
+      "name": "projectName",
+      "metadataFieldId": 1260,
+      "type": "text",
+      "required": true
+    },
+    {
+      "label": "Storage Location",
+      "name": "storageId",
+      "metadataFieldId": 1673,
+      "type": "dropdown",
+      "required": true,
+      "options": [
+        {
+          "label": "AWS S3 Storage",
+          "value": 1016
+        },
+        {
+          "label": "Azure Blob Storage",
+          "value": 1017
+        },
+        {
+          "label": "Google Cloud Storage",
+          "value": 1018
+        },
+        {
+          "label": "On-Premise NAS",
+          "value": 1019
+        }
+      ]
+    }
+
+  ],
+  "templates": [
+    {
+      "name": "Standard",
+      "assets": {
+        "premiere": "D:\\templates\\premiere\\template.prproj",
+        "afterEffects": "D:\\templates\\aftereffects\\Template_MoGFX.aep",
+        "photoshop": "D:\\templates\\photoshop\\live_keynote.psd"
+      },
+      "categoryPaths": [
+        "GFX/zOLD",
+        "Media/MMDDYY_(ShirtID)_(CAM)####",
+        "Media/MMDDYY_(ShirtID)_(CAM)####_SOUND",
+        "Media/zOLD",
+        "Mix/From Sound/zOLD",
+        "Mix/To Sound/zOLD",
+        "Motion GFX/zOLD",
+        "Motion GFX/_AE",
+        "Music/zOLD",
+        "SFX/zOLD",
+        "Text/zOLD",
+        "VO/zOLD",
+        "xDo Not Archive",
+        "_Deliverables",
+        "_Review/zOLD"
+      ]
+    },
+    {
+      "name": "Live Key Note",
+      "assets": {
+        "premiere": "D:\\templates\\premiere\\Choir Fest.prproj",
+        "afterEffects": "D:\\templates\\aftereffects\\live_keynote.aep",
+        "photoshop": "D:\\templates\\photoshop\\live_keynote.psd"
+      },
+      "categoryPaths": [
+        "GFX/zOLD",
+        "Media/MMDDYY_(ShirtID)_(CAM)####",
+        "Media/MMDDYY_(ShirtID)_(CAM)####_SOUND",
+        "Media/zOLD",
+        "Mix/From Sound/zOLD",
+        "Mix/To Sound/zOLD",
+        "Motion GFX/zOLD",
+        "Motion GFX/_AE",
+        "Music/zOLD",
+        "SFX/zOLD",
+        "Text/zOLD",
+        "VO/zOLD",
+        "xDo Not Archive",
+        "_Deliverables",
+        "_Review/zOLD"
+      ]
+    },
+
+
+    {
+      "name": "Digital Key Note",
+      "assets": {
+        "premiere": "D:\\templates\\premiere\\Choir Fest.prproj",
+        "afterEffects": "D:\\templates\\aftereffects\\live_keynote.aep",
+        "photoshop": "D:\\templates\\photoshop\\live_keynote.psd"
+      },
+      "categoryPaths": [
+        "Media/ASSETS_CH01 -",
+        "Media/ASSETS_CH02 -",
+        "Media/ASSETS_CH03 -",
+        "Media/ASSETS_CH04 -",
+        "Media/ASSETS_CH05 -",
+        "Media/ASSETS_CH06 -",
+        "Media/ASSETS_CH07 -",
+        "Media/ASSETS_CH08 -",
+        "Media/ASSETS_CH09 -",
+        "Media/ASSETS_MASTER -",
+        "Media/zOLD",
+        "Media/_DECK",
+        "Media/_EXT_VIDEOS - Replace videos here, not in ASSETS",
+        "Media/_EXT_VIDEOS - Replace videos here, not in ASSETS/000000_EXTVIDNAME",
+        "Media/_EXT_VIDEOS - Replace videos here, not in ASSETS/PRE-POST-ROLL",
+        "Media/_PRINCIPAL_PHOTOGRAPHY/LOOKS",
+        "Media/_PRINCIPAL_PHOTOGRAPHY/MMDDYY_[ShortID]_SOUND_[CAM]####",
+        "Media/_PRINCIPAL_PHOTOGRAPHY/MMDDYY_[ShortID]_[CAM]####",
+        "Media/_PRINCIPAL_PHOTOGRAPHY/SIZING",
+        "Mix/From Sound/CH01 -",
+        "Mix/From Sound/CH02 -",
+        "Mix/From Sound/CH03 -",
+        "Mix/From Sound/CH04 -",
+        "Mix/From Sound/CH05 -",
+        "Mix/From Sound/MASTER",
+        "Mix/From Sound/zOLD",
+        "Mix/To Sound/CH01 -",
+        "Mix/To Sound/CH02 -",
+        "Mix/To Sound/CH03 -",
+        "Mix/To Sound/CH04 -",
+        "Mix/To Sound/CH05 -",
+        "Mix/To Sound/MASTER",
+        "Mix/To Sound/zOLD",
+        "Shared GFX/zOLD",
+        "Shared_Motion_GFX",
+        "Sahred_Music/zOLD",
+        "Sahred_Music/_USED",
+        "Sahred_Music/zOLD",
+        "Shared_Text/IN_Scripts",
+        "Shared_Text/OUT_SRTs",
+        "Shared_Text/zOLD",
+        "_Deliverables/Cutdown",
+        "_Deliverables/MASTER",
+        "_Review/CH01",
+        "_Review/Cutdown",
+        "_Review/MASTER",
+        "_Review/Misc",
+        "_Review/zOLD"
+      ]
+    }
+  ]
+}
+
+
