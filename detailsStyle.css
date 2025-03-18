@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+label {
+    color: #CCCCCC;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 8px;
+    float: left;
+    margin-top: 6px;
+}
+
+input, select {
+    float: left;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 3px 6px;
+    margin-top: 4px;
+    border: none;
+    background-color: #595959;
+    color: #CCCCCC;
+    min-width: 118px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+/* Specific styles for select dropdowns */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CCCCCC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+
+/* Specific styles for text inputs */
+input[type="text"] {
+    cursor: text;
+    background-image: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:hover {
+    background-color: #666666;
+}
+
+select:focus {
+    outline: none;
+    background-color: #666666;
+}
+
+/* Dropdown Menu Styles */
+select option {
+    background-color: #595959 !important;
+    color: #CCCCCC !important;
+    padding: 8px;
+}
+
+/* Override default option hover/focus colors for all browsers */
+select option:hover,
+select option:focus,
+select option:active,
+select option:checked,
+select option:focus-visible,
+select option:focus-within,
+select option:target {
+    background: #666666 !important;
+    background-color: #666666 !important;
+    color: #CCCCCC !important;
+    box-shadow: 0 0 0 3px #666666 !important;
+    -webkit-box-shadow: 0 0 0 3px #666666 !important;
+    -moz-box-shadow: 0 0 0 3px #666666 !important;
+}
+
+/* For Firefox */
+@-moz-document url-prefix() {
+    select option:checked,
+    select option:hover {
+        background-color: #666666 !important;
+        color: #CCCCCC !important;
+        box-shadow: 0 0 0 3px #666666 !important;
+    }
+}
+
+/* For Webkit browsers */
+select option:checked,
+select option:hover {
+    background: #666666 !important;
+    -webkit-text-fill-color: #CCCCCC !important;
+}
+
+/* Additional overrides for modern browsers */
+select option::selection {
+    background-color: #666666 !important;
+    color: #CCCCCC !important;
+}
+
+select option::-moz-selection {
+    background-color: #666666 !important;
+    color: #CCCCCC !important;
+}
+
+/* Override highlight color */
+::selection {
+    background-color: #666666 !important;
+    color: #CCCCCC !important;
+}
+
+::-moz-selection {
+    background-color: #666666 !important;
+    color: #CCCCCC !important;
+}
+
+/* For IE/Edge */
+select::-ms-value {
+    background-color: #595959 !important;
+    color: #CCCCCC !important;
+}
+
+/* Remove focus outline */
+select:focus {
+    outline: none !important;
+}
+
+/* Button Styles */
+button {
+    background-color: #cecece;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 8px 5px 4px 0px;
+    padding: 2px 11px 2px 11px;
+    text-align: center;
+    text-shadow: 0 0px 0 #ECE8E8;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #b8b8b8;
+}
+
+/* Table Container */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styles */
+#detailsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header Styles */
+#detailsTable thead {
+    background-color: #2d2d2d;
+}
+
+#detailsTable th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 1px solid #3d3d3d;
+    white-space: nowrap;
+    background-color: #2d2d2d;
+}
+
+/* Table Body Styles */
+#detailsTable td {
+    padding: 12px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid #3d3d3d;
+    color: #e0e0e0;
+}
+
+/* Key/Value Styling - Left column (Keys) */
+#detailsTable td:first-child {
+    width: 25%;
+    background-color: #2d2d2d;
+    color: #CCCCCC;
+    font-weight: normal;
+    border-right: 1px solid #3d3d3d;
+    text-transform: capitalize;
+}
+
+/* Key/Value Styling - Right column (Values) */
+#detailsTable td:last-child {
+    width: 75%;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* Style for the strong tag in the left column */
+#detailsTable td:first-child strong {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #CCCCCC;
+    letter-spacing: 0.5px;
+}
+
+/* No hover effect for popup */
+/* #detailsTable tbody tr:hover {
+    background-color: #2d2d2d;
+} */
+
+/* Alternating Row Colors */
+#detailsTable tbody tr:nth-child(even) td:last-child {
+    background-color: #252525;
+}
+
+/* Pagination Styles */
+#pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Pagination Button Styles */
+/* #pagination button {
+    background-color: #cecece;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 8px 5px 4px 0px;
+    padding: 2px 11px 2px 11px;
+    text-align: center;
+    text-shadow: 0 0px 0 #ECE8E8;
+    border-radius: 4px;
+}
+
+#pagination button:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+#pagination button:disabled {
+    background-color: #a0a0a0;
+    color: #666666;
+    cursor: not-allowed;
+} */
+
+#pageInfo {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #detailsTable th,
+    #detailsTable td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .table-responsive {
+        margin: 10px 0;
+    }
+    
+    form {
+        gap: 10px;
+    }
+}
+
+/* Custom Scrollbar */
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #3d3d3d;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #4d4d4d;
+}
+
+/* Search Button */
+button[type="button"] {
+    background-color: #cecece;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 8px 5px 4px 0px;
+    padding: 2px 11px 2px 11px;
+    text-align: center;
+    text-shadow: 0 0px 0 #ECE8E8;
+    border-radius: 4px;
+}
+
+button[type="button"]:hover {
+    background-color: #b8b8b8;
+}
+
+/* Link Styles */
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Table Link Styles */
+#detailsTable td a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#detailsTable td a:hover {
+    opacity: 0.8;
+}
+
+/* Logo Styles */
+.logo {
+    text-decoration: none;
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.logo-image {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+/* Header Container */
+.header-container {
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    border-bottom: 1px solid #2d2d2d;
+    margin-bottom: 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #2d2d2d;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.global-search {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 8px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.global-search::placeholder {
+    color: #888;
+}
+
+.advanced-btn {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Action Buttons */
+.action-buttons button {
+    background-color: #595959;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.action-buttons button:hover {
+    background-color: #666666;
+}
+
+/* Form Container */
+#filterForm {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Send To Emm Button - style for the button that was previously styled inline */
+.emm-button {
+    margin-left: 1rem;
+} 

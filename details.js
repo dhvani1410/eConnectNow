@@ -81,10 +81,8 @@ function populateDetails(details) {
 
     const button = document.createElement('button');
     button.textContent = 'Send To Emm';
-    //
-    const sysid = details.sys_id; // Example sysid value
-    button.setAttribute('onclick', `SendDataToEmm('${sysid}')`);
-    button.style.marginLeft = '1rem';
+    button.className = 'emm-button'; // Added class instead of inline style
+    button.setAttribute('onclick', `SendDataToEmm('${details.sys_id}')`);
     closeButton.parentNode.insertBefore(button, closeButton.nextSibling);
 }
 

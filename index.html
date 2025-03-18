@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiceNow VOD Data</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="emam-favicon.png">
 </head>
 <body>
+    <div class="header-container">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="emam-logo.png" alt="eMAM" class="logo-image">
+            </a>
+        </div>
+    </div>
+
     <h2>ServiceNow VOD Data</h2>
     <form id="filterForm">
         <label for="vodFileName">VOD File Name:</label>
@@ -25,24 +34,26 @@
         <button type="button" onclick="fetchData(true)">Search</button>
     </form>
     
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>Number</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Updated On</th>
-                <th>VOD Notes</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="table-responsive">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Updated On</th>
+                    <th>VOD Notes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
     
-    <div id="pagination">
-        <button onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+    <div id="pagination" class="action-buttons">
+        <button type="button" onclick="prevPage()" id="prevBtn" >Previous</button>
         <span id="pageInfo"></span>
-        <button onclick="nextPage()" id="nextBtn" disabled>Next</button>
+        <button type="button" onclick="nextPage()" id="nextBtn" >Next</button>
     </div>
     
     <script src="script.js?v3"></script>
